@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+	 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+	<!-- import the jdbc.properties file which is in the configuration directory. -->
+	<context:property-placeholder location="/WEB-INF/conf/jdbc.properties"/>
+	<!-- Configure DataBaseConnectionPool DataSource -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+	 <property name="driverClassName" value="${jdc.driverClassName}"></property>
+	 <property name="url" value="${jdbc.url}"></property>
+	 <property name="username" value="${jdbc.username}"></property>
+	 <property name="password" value="${jdbc.password}"></property>
+	 <property name="initialSize" value="${jdbc.initialSize}"></property>                  <!-- Configure the initial size of the DB Connection pool -->
+	 <property name="minIdle" value="${jdbc.minIdle}"></property>                        <!--The minimal idle/waiting number of the DB Connection pool -->
+	 <property name="maxIdle" value="${jdbc.maxIdle}"></property>                       <!--The maximal idle/waiting number of the DB Connection pool -->
+	 <property name="maxWaitMilliS" value="${jdbc.maxWaitMilliS}"></property>    <!--The maximal waiting time (ms) of the DB Connection pool -->
+	 <property name="maxTotal" value="${jdbc.maxTotal}"></property>                    <!--The maximal active number of the DB Connection pool -->
+	</bean>
+	<!-- Configure JDBC transaction -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	 <property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- Set the method which will be added into transaction -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+	 <tx:attributes>
+	   <tx:method name="create*" propagation="REQUIRED"/>
+	   <tx:method name="read*" read-only="true" propagation="REQUIRED"/>
+	   <tx:method name="update*" propagation="REQUIRED"/>
+	   <tx:method name="delete*" propagation="REQUIRED"/>
+	   <tx:method name="*" propagation="REQUIRED"/>
+	 </tx:attributes>
+	</tx:advice>
+	<!-- Configure AOP, Spring manage transactions by AOP -->
+	<aop:config>
+	 <aop:pointcut expression="execution(* miw.service.*.*(..))" id="txPointcut"/>
+	 <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+	</aop:config>
+	<!-- Configure transaction by annotation -->
+	<tx:annotation-driven transaction-manager="txManager"/>
+	
+</beans>
