@@ -38,7 +38,7 @@
 			</tx:advice>
 			<!-- Configure AOP, Spring manage transactions by AOP -->
 			<aop:config>
-						<aop:pointcut expression="execution(* miw.service.*.*(..))" id="txPointcut" />
+						<aop:pointcut expression="execution(* co.miw.service.*.*(..))" id="txPointcut" />
 						<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
 			</aop:config>
 			<!-- Configure transaction by annotation -->

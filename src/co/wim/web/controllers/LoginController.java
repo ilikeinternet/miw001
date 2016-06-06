@@ -1,7 +1,7 @@
 /**
  * MIW System web controller
  */
-package com.wim.web.controllers;
+package co.wim.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.SessionAttributes;
