@@ -17,7 +17,7 @@ public interface BaseDao<M, PK extends java.io.Serializable> {
    public M queryById(PK id);
    //Query data by page
    public List<M> queryByPage(String sql, int pageSize, int pgaeNo);
-   //Get  the number of recordset
+   //Get  the number of record set
    public int getCount(String sql);
    //Update
    public void update(M model);

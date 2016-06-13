@@ -1,5 +1,5 @@
 /**
- * Contains Services and base services interface.
+ * Contains services and base services interface.
  */
 package co.miw.services;
 

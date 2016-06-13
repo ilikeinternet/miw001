@@ -1,5 +1,5 @@
 /**
- * Contains base DAO's implement abstract class.
+ * Contains DAO and base DAO's implement abstract class.
  */
 package co.miw.daos.impl;
 
