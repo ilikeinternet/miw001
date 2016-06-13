@@ -1,9 +1,10 @@
 /**
  * Contains Services and base Service's implement abstract class.
  */
-package co.miw.services;
+package co.miw.services.impl;
 
 import java.util.List;
+import co.miw.services.BaseService;
 
 /**
  * @author JTLi; 16/06/07

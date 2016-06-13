@@ -1,9 +1,10 @@
 /**
- * Contains DAO and base DAO's implement abstract class.
+ * Contains base DAO's implement abstract class.
  */
-package co.miw.daos;
+package co.miw.daos.impl;
 
 import java.util.List;
+import co.miw.daos.BaseDao;
 
 /**
  * @author JTLi; 16/06/07
