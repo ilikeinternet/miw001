@@ -19,7 +19,7 @@
 						<property name="initialSize" value="${jdbc.initialSize}"></property>                  <!-- Configure the initial size of the DB Connection pool -->
 						<property name="minIdle" value="${jdbc.minIdle}"></property>                        <!--The minimal idle/waiting number of the DB Connection pool -->
 						<property name="maxIdle" value="${jdbc.maxIdle}"></property>                       <!--The maximal idle/waiting number of the DB Connection pool -->
-						<property name="maxWaitMilliS" value="${jdbc.maxWaitMilliS}"></property>    <!--The maximal waiting time (ms) of the DB Connection pool -->
+						<property name="maxWaitMillis" value="${jdbc.maxWaitMillis}"></property>    <!--The maximal waiting time (ms) of the DB Connection pool -->
 						<property name="maxTotal" value="${jdbc.maxTotal}"></property>                    <!--The maximal active number of the DB Connection pool -->
 			</bean>
 			<!-- Configure JDBC transaction -->
@@ -43,13 +43,13 @@
 			</aop:config>
 			<!-- Configure transaction by annotation -->
 			<tx:annotation-driven transaction-manager="txManager" />
-			<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+			<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 						<property name="dataSource" ref="dataSource" />
 						<property name="configLocation" value="/WEB-INF/conf/sqlMapConfig.xml" />
 						<property name="mapperLocations" value="/WEB-INF/conf/mapper/postgreSQL/**/*Mapper.xml" />
 			</bean>
 			<!-- Configure SQLSession template -->
-			<bean class="org.mybatis.spring.SqlSesionTemplate" id="sqlSesion">
+			<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 						<constructor-arg ref="sqlSessionFactory" index="0" />
 			</bean>
 </beans>
