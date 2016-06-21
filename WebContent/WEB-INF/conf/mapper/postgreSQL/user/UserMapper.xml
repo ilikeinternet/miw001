@@ -86,26 +86,8 @@
 
 	<!-- 添加 -->	
 	<insert id="insert" parameterType="co.miw.models.User">
-		insert into t_user(
-			dic_id, 
-			dic_name, 
-			dic_value,
-			dic_group, 
-			dic_type, 
-			dic_order,
-			dic_status, 
-			dic_parent_id
-		)
-		values (
-			#{dicId}, 
-			#{dicName},
-			#{dicValue},
-			#{dicGroup}, 
-			#{dicType}, 
-			#{dicOrder},
-			#{dicStatus}, 
-			#{dicParentId}
-		)
+		insert into t_user(uname, password,	realname,	gender,	points, active,	email, mobile,tel,office,home,remark)
+		values (	#{uname},	#{password},	#{realname},#{gender},#{points},#{active},#{email},#{mobile},#{tel},#{office},#{home},#{remark})
 	</insert>
 	
 	
