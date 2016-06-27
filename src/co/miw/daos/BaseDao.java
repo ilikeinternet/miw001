@@ -10,7 +10,7 @@ import java.util.List;
  * Basic DAO transaction. Refer to the following mapping relationships between program and DB transaction(SQL):
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
-public interface BaseDao<M, PK extends java.io.Serializable> {
+public interface BaseDao<M, PK> {
    //Insert a record
    public void insert(M model);
    //Find a record by id

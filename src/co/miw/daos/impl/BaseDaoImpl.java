@@ -11,7 +11,7 @@ import co.miw.daos.BaseDao;
  * Basic DAO transaction. Refer to the following mapping relationships between program and DB transaction(SQL):
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
-public abstract class BaseDaoImpl<M, PK extends java.io.Serializable> implements BaseDao<M, PK> {
+public abstract class BaseDaoImpl<M, PK> implements BaseDao<M, PK> {
 
    public BaseDaoImpl() {
       // Get the generic actual superclass's type

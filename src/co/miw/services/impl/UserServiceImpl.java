@@ -14,7 +14,7 @@ import co.miw.services.UserService;
  * User Service implement
  */
 @Service("userService")
-public class UserServiceImpl extends BaseServiceImpl<User, String> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
    private UserDao userDao;
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
@@ -29,7 +29,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
     * @see co.miw.services.BaseService#queryById(java.io.Serializable)
     */
    @Override
-   public User queryById(String id) {
+   public User queryById(Integer id) {
       // TODO Auto-generated method stub
       return null;
    }
@@ -65,7 +65,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
     * @see co.miw.services.BaseService#deleteById(java.io.Serializable)
     */
    @Override
-   public void deleteById(String id) {
+   public void deleteById(Integer id) {
       // TODO Auto-generated method stub
 
    }
@@ -83,7 +83,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, String> implements Us
     * @see co.miw.services.UserService#verifyUserPwd(co.miw.models.User, java.lang.String, java.lang.String)
     */
    @Override
-   public boolean verifyUserPwd(User user, String uid, String password) {
+   public boolean verifyUserPwd(User user, Integer uid, String password) {
       // TODO Auto-generated method stub
       return false;
    }
