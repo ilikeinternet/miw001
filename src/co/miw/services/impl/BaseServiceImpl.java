@@ -11,7 +11,7 @@ import co.miw.services.BaseService;
  * Basic CRUD transaction. Refer to the following mapping relationships between program and DB transaction(SQL):
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
-public abstract class BaseServiceImpl<M, PK extends java.io.Serializable> implements BaseService<M, PK> {
+public abstract class BaseServiceImpl<M, PK> implements BaseService<M, PK> {
 
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)

@@ -10,7 +10,7 @@ import java.util.List;
  * Basic service. Refer to the following mapping relationships between program and DB transaction(SQL):
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
-public interface BaseService<M, PK extends java.io.Serializable> {
+public interface BaseService<M, PK> {
    //Create or add a input record
    public void create(M model);
    //A common method of getting a record, according to a input id.

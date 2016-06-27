@@ -8,6 +8,6 @@
 						<setting name="useColumnLabel" value="true" />
 						<setting name="defaultExecutorType" value="REUSE" />
 						<setting name="defaultStatementTimeout" value="25" />
-						<setting name="logimpl" value="SLF4J" />
+						<!-- <setting name="logimpl" value="SLF4J" />  -->
 			</settings>
 </configuration>

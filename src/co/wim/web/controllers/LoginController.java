@@ -28,7 +28,7 @@ public class LoginController {
       this.userService=userService;
    }
    @RequestMapping(value="/login",method=RequestMethod.POST)
-   public ModelAndView login(String uid,String password,HttpSession session){
+   public ModelAndView login(Integer uid,String password,HttpSession session){
       ModelAndView view=null;
       //To transfer the user info, divide the getting user info and verification into 2 steps
       User user=userService.queryById(uid);
