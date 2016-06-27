@@ -22,16 +22,16 @@ import co.miw.services.UserService;
 @Controller
 @SessionAttributes("loginUser")
 public class LoginController {
-   private UserService userService;
+   private UserService userServiceImpl;
    @Resource
-   public void setUserService(UserService userService){
-      this.userService=userService;
+   public void setUserServiceImpl(UserService userServiceImpl){
+      this.userServiceImpl=userServiceImpl;
    }
    @RequestMapping(value="/login",method=RequestMethod.POST)
    public ModelAndView login(Integer uid,String password,HttpSession session){
       ModelAndView view=null;
       //To transfer the user info, divide the getting user info and verification into 2 steps
-      User user=userService.queryById(uid);
+      User user=userServiceImpl.queryById(uid);
       System.out.println(user);
       //Input uid is not existing, then return the login page with ERROR message.
       if (user==null){
@@ -39,7 +39,7 @@ public class LoginController {
          session.setAttribute("errorMsg", "No this User!!!");
          return view;
       }
-      if (userService.verifyUserPwd(user, uid, password)){
+      if (userServiceImpl.verifyUserPwd(user, uid, password)){
          session.setAttribute("user", user);
          view=new ModelAndView("success");
          return view;
