@@ -7,7 +7,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import co.miw.daos.BaseDao;
-import co.miw.daos.UserDao;
 import co.miw.models.User;
 import co.miw.services.UserService;
 
@@ -15,10 +14,10 @@ import co.miw.services.UserService;
  * @author JTLi; 16/06/14
  * User Service implement
  */
-@Service("userService")
+@Service("userServiceImpl")
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
-   @Resource(name="userDao")
-   public void setUserDao(BaseDao<User,Integer> userDaoImpl){
+   @Resource(name="userDaoImpl")
+   public void setUserDaoImpl(BaseDao<User,Integer> userDaoImpl){
       super.SetBaseDao(userDaoImpl);
    }
    /* (non-Javadoc)
