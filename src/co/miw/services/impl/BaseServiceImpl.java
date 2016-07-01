@@ -14,7 +14,6 @@ import co.miw.services.BaseService;
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
 public abstract class BaseServiceImpl<M, PK> implements BaseService<M, PK> {
-   
    private BaseDao<M,PK> baseDao;
    @Resource
    public void SetBaseDao(BaseDao<M,PK> baseDao){
