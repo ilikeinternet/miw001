@@ -11,7 +11,7 @@ import co.miw.models.User;
  * @author JTLi; 16/06/27
  * User data accessing.
  */
-public class UserDaoimpl extends BaseDaoImpl<User, Integer> implements UserDao {
+public class UserDaoImpl extends BaseDaoImpl<User, Integer> implements UserDao {
 
    /* (non-Javadoc)
     * @see co.miw.daos.BaseDao#insert(java.lang.Object)

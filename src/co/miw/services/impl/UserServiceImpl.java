@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import co.miw.daos.BaseDao;
+import co.miw.daos.UserDao;
 import co.miw.models.User;
 import co.miw.services.UserService;
 
@@ -16,9 +17,12 @@ import co.miw.services.UserService;
  */
 @Service("userServiceImpl")
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
+   private UserDao userDaoImpl;
+   @Override
    @Resource(name="userDaoImpl")
-   public void setUserDaoImpl(BaseDao<User,Integer> userDaoImpl){
-      super.SetBaseDao(userDaoImpl);
+   public void setBaseDao(BaseDao<User, Integer> userDaoImpl){
+      super.baseDao=userDaoImpl;
+      this.userDaoImpl=(UserDao) userDaoImpl;
    }
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
@@ -88,8 +92,10 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
     */
    @Override
    public boolean verifyUserPwd(User user, Integer uid, String password) {
-      // TODO Auto-generated method stub
-      return false;
+      if(!user.getPassword().equals(password)){
+         return false;
+      }
+      return true;
    }
 
 }

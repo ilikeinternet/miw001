@@ -14,11 +14,9 @@ import co.miw.services.BaseService;
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
 public abstract class BaseServiceImpl<M, PK> implements BaseService<M, PK> {
-   private BaseDao<M,PK> baseDao;
+   protected BaseDao<M,PK> baseDao;
    @Resource
-   public void SetBaseDao(BaseDao<M,PK> baseDao){
-      this.baseDao=baseDao;
-   }
+   public abstract void setBaseDao(BaseDao<M,PK> baseDao);
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
     */
