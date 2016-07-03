@@ -4,6 +4,7 @@
 package co.miw.daos.impl;
 
 import java.util.List;
+import org.springframework.stereotype.Repository;
 import co.miw.daos.UserDao;
 import co.miw.models.User;
 
@@ -11,6 +12,7 @@ import co.miw.models.User;
  * @author JTLi; 16/06/27
  * User data accessing.
  */
+@Repository("userDaoImpl")
 public class UserDaoImpl extends BaseDaoImpl<User, Integer> implements UserDao {
 
    /* (non-Javadoc)

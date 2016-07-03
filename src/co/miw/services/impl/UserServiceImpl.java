@@ -6,10 +6,12 @@ package co.miw.services.impl;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import co.miw.daos.BaseDao;
 import co.miw.daos.UserDao;
 import co.miw.models.User;
 import co.miw.services.UserService;
+import co.miw.daos.impl.UserDaoImpl;
 
 /**
  * @author JTLi; 16/06/14
@@ -20,9 +22,9 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
    private UserDao userDaoImpl;
    @Override
    @Resource(name="userDaoImpl")
-   public void setBaseDao(BaseDao<User, Integer> userDaoImpl){
+   public void setBaseDao(BaseDao<User,Integer> userDaoImpl){
       super.baseDao=userDaoImpl;
-      this.userDaoImpl=(UserDao) userDaoImpl;
+      this.userDaoImpl=(UserDaoImpl) userDaoImpl;
    }
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
