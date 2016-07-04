@@ -1,7 +1,7 @@
 /**
  * MIW System web controller
  */
-package co.wim.web.controllers;
+package co.miw.web.controllers;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;

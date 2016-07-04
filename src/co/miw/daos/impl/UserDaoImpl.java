@@ -12,7 +12,7 @@ import co.miw.models.User;
  * @author JTLi; 16/06/27
  * User data accessing.
  */
-@Repository("userDaoImpl")
+@Repository
 public class UserDaoImpl extends BaseDaoImpl<User, Integer> implements UserDao {
 
    /* (non-Javadoc)
