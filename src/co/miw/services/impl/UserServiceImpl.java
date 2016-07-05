@@ -39,9 +39,10 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
     * @see co.miw.services.BaseService#queryById(java.io.Serializable)
     */
    @Override
-   public User queryById(Integer id) {
-      // TODO Auto-generated method stub
-      return null;
+   public User queryById(Integer uid) {
+      User user;
+      user=userDaoImpl.queryById(uid);
+      return user;
    }
 
    /* (non-Javadoc)
