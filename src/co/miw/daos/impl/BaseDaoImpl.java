@@ -10,9 +10,11 @@ import co.miw.daos.BaseDao;
  * @author JTLi; 16/06/07
  * Basic DAO transaction. Refer to the following mapping relationships between program and DB transaction(SQL):
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
+ * @param M = model class;
+ * @param PK = Primary Key which is integer type or other types
  */
 public abstract class BaseDaoImpl<M, PK> implements BaseDao<M, PK> {
-
+	
    public BaseDaoImpl() {
       // Get the generic actual superclass's type
    }
