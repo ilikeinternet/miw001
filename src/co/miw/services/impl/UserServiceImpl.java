@@ -4,14 +4,9 @@
 package co.miw.services.impl;
 
 import java.util.List;
-import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import co.miw.daos.BaseDao;
-import co.miw.daos.UserDao;
 import co.miw.models.User;
 import co.miw.services.UserService;
-import co.miw.daos.impl.UserDaoImpl;
 
 /**
  * @author JTLi; 16/06/14
@@ -19,13 +14,6 @@ import co.miw.daos.impl.UserDaoImpl;
  */
 @Service("userServiceImpl")
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
-   private UserDao userDaoImpl;
-   @Override
-   @Resource(name="userDaoImpl")
-   public void setBaseDao(BaseDao<User,Integer> userDaoImpl){
-      super.baseDao=userDaoImpl;
-      this.userDaoImpl=(UserDaoImpl) userDaoImpl;
-   }
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
     */
@@ -38,12 +26,12 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#queryById(java.io.Serializable)
     */
-   @Override
-   public User queryById(Integer uid) {
-      User user;
-      user=userDaoImpl.queryById(uid);
-      return user;
-   }
+//   @Override
+//   public User queryById(Integer uid) {
+//      User user;
+//      //user=userDaoImpl.queryById(uid);
+//      return user;
+//   }
 
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#queryList()

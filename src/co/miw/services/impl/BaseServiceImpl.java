@@ -4,8 +4,6 @@
 package co.miw.services.impl;
 
 import java.util.List;
-import javax.annotation.Resource;
-import co.miw.daos.BaseDao;
 import co.miw.services.BaseService;
 
 /**
@@ -14,9 +12,7 @@ import co.miw.services.BaseService;
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
 public abstract class BaseServiceImpl<M, PK> implements BaseService<M, PK> {
-   protected BaseDao<M,PK> baseDao;
-   @Resource
-   public abstract void setBaseDao(BaseDao<M,PK> baseDao);
+   
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
     */
