@@ -12,7 +12,7 @@
 	<mvc:resources mapping="/js/**" location="/js/"/>
 	<mvc:default-servlet-handler/>
 	<mvc:annotation-driven/>
-	<context:component-scan base-package="co.miw.web" />
+	<context:component-scan base-package="co.miw.web.controllers" />
   <context:component-scan base-package="co.miw.services" />
   <context:component-scan base-package="co.miw.daos" />
 </beans>
