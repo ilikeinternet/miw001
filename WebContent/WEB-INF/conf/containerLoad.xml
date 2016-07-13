@@ -29,7 +29,7 @@
 			<tx:advice id="txAdvice" transaction-manager="txManager">
 						<tx:attributes>
 									<tx:method name="create*" propagation="REQUIRED" />
-									<tx:method name="read*" read-only="true" propagation="REQUIRED" />
+									<tx:method name="read*" read-only="true" propagation="SUPPORTS" />
 									<tx:method name="update*" propagation="REQUIRED" />
 									<tx:method name="delete*" propagation="REQUIRED" />
 									<tx:method name="*" propagation="REQUIRED" />
