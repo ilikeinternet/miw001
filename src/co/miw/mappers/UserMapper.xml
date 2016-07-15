@@ -1,56 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.miw.mappers.UserMapper">
-			<!-- 查询总数 -->
-			<select id="getCount" resultType="java.lang.Long" parameterType="java.util.Map">
-						select count(uid)
-						from t_user
-			</select>
-
-			<!-- 根据ID查询 -->
-			<select id="queryById" resultType="co.miw.models.User" parameterType="java.lang.Long">
-						select
-						*
-						from t_user
-						where uid = #{uid}
-			</select>
-
-			<!-- 根据ID删除 -->
-			<delete id="deleteById" parameterType="java.lang.Long">
-						delete from t_user
-						where uid = #{uid}
-			</delete>
-
-			<!-- 删除 -->
-			<delete id="delete" parameterType="java.util.Map">
-						delete from t_user
-			</delete>
-
-			<!-- 添加 -->
-			<insert id="insert" parameterType="co.miw.models.User">
-						insert into t_user(uname, password, realname, gender, points, active, email,
-						mobile,tel,office,home,remark)
-						values ( #{uname}, #{password},
-						#{realname},#{gender},#{points},#{active},#{email},#{mobile},#{tel},#{office},#{home},#{remark})
+			<!-- Add a user. -->
+			<insert id="insertUser" parameterType="co.miw.models.User">
+						insert into t_user(uname,password, realname, gender, points, active, email,	mobile,tel,office,home,remark,ctime,cuid,cip,utime,uuid,uip)
+						values ( #{uname}, #{password},#{realname},#{gender},#{points},#{active},#{email},#{mobile},#{tel},#{office},#{home},#{remark},#{ctime},#{cuid},#{cip},#{utime},#{uuid},#{uip})
 			</insert>
-
-
-			<!-- 通过ID更新 -->
-			<update id="updateById" parameterType="java.lang.Long">
-						update t_user set
-						uname=#{uname}, password=#{password},realname=#{realname},gender=#{gender},points=#{points},active=#{active},email=#{email},mobile=#{mobile},tel=#{tel},office=#{office},home=#{home},remark=#{remark}
-						<!--  
-						<set>
-									<if test="dicName != null">dic_name = #{dicName},</if>
-									<if test="dicValue != null">dic_value = #{dicValue},</if>
-									<if test="dicGroup != null">dic_group = #{dicGroup},</if>
-									<if test="dicType != null">dic_type = #{dicType},</if>
-									<if test="dicOrder != null">dic_order = #{dicOrder},</if>
-									<if test="dicStatus != null">dic_status = #{dicStatus},</if>
-									<if test="dicParentId != null">dic_parent_id = #{dicParentId},</if>
-						</set>
-						-->
-						where uid = #{uid}
-			</update>
-
 </mapper>

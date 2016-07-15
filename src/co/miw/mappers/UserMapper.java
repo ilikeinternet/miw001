@@ -12,10 +12,16 @@ import co.miw.models.User;
  * insert - Create; select/query - Retrieve; update - Update; delete - Delete;
  */
 public interface UserMapper {
+	//Insert a user.
    void insertUser(User user);
-   void insertSelectedUser(List<User> list);
-   User selectByKey(Integer id);
-   List<User> selectList();
-   void updateByKey(User user);   //or  updateByKey(Integer id, User user);  //user contains id's infomation.
-   void deleteByKey(Integer id);
+   //Insert selected users according to selected on the display/a list.
+//   void insertSelectedUser(List<User> list);
+//   //Query a user by user id.
+//   User selectByKey(Integer id);
+//   //Query all users.
+//   List<User> selectList();
+//   //Updated user's information according to user id.
+//   void updateByKey(User user);   //or  updateByKey(Integer id, User user);  //user contains id's infomation.
+//   //Delete a user according to user id.
+//   void deleteByKey(Integer id);
 }

@@ -3,13 +3,11 @@
  */
 package co.miw.models;
 
-import java.util.Date;
-
 /**
  * @author JTLi; 16/06/02
  * Contains user's info, also used to authentication login.
  */      
-public class User {
+public class User extends BaseModel{
    private Integer uid;
    private String uname;
    private String password;
@@ -22,13 +20,6 @@ public class User {
    private String tel;
    private String office;
    private String home;
-   private String remark;
-   private Date ctime;
-   private Integer cuid;
-   private String cip;
-   private Date utime;
-   private Integer uuid;
-   private String uip;
    public Integer getUid() {
       return uid;
    }
@@ -103,48 +94,5 @@ public class User {
    }
    public void setGender(int gender) {
       this.gender = gender;
-   }
-   public String getRemark() {
-      return remark;
-   }
-   public void setRemark(String remark) {
-      this.remark = remark;
-   }
-   public Date getCtime() {
-      return ctime;
-   }
-   public void setCtime(Date ctime) {
-      this.ctime = ctime;
-   }
-   public Integer getCuid() {
-      return cuid;
-   }
-   public void setCuid(Integer cuid) {
-      this.cuid = cuid;
-   }
-   public String getCip() {
-      return cip;
-   }
-   public void setCip(String cip) {
-      this.cip = cip;
-   }
-   public Date getUtime() {
-      return utime;
-   }
-   public void setUtime(Date utime) {
-      this.utime = utime;
-   }
-   public Integer getUuid() {
-      return uuid;
-   }
-   public void setUuid(Integer uuid) {
-      this.uuid = uuid;
-   }
-   public String getUip() {
-      return uip;
-   }
-   public void setUip(String uip) {
-      this.uip = uip;
-   }
-   
+   }   
 }

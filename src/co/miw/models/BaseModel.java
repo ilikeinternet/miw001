@@ -18,85 +18,85 @@ public class BaseModel {
    private Integer uuid;
    private String uip;
 	/**
-	 * @return the remark
+	 * @return the remark.
 	 */
 	public String getRemark() {
 		return remark;
 	}
 	/**
-	 * @param remark the remark to set
+	 * @param remark the remark to set.
 	 */
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
 	/**
-	 * @return the ctime
+	 * @return the created time of this record.
 	 */
 	public Date getCtime() {
 		return ctime;
 	}
 	/**
-	 * @param ctime the ctime to set
+	 * @param the created time to set.
 	 */
 	public void setCtime(Date ctime) {
 		this.ctime = ctime;
 	}
 	/**
-	 * @return the cuid
+	 * @return the created user id.
 	 */
 	public Integer getCuid() {
 		return cuid;
 	}
 	/**
-	 * @param cuid the cuid to set
+	 * @param the created user id to set.
 	 */
 	public void setCuid(Integer cuid) {
 		this.cuid = cuid;
 	}
 	/**
-	 * @return the cip
+	 * @return the created user's ip.
 	 */
 	public String getCip() {
 		return cip;
 	}
 	/**
-	 * @param cip the cip to set
+	 * @param the created user's ip to set.
 	 */
 	public void setCip(String cip) {
 		this.cip = cip;
 	}
 	/**
-	 * @return the utime
+	 * @return the updated time.
 	 */
 	public Date getUtime() {
 		return utime;
 	}
 	/**
-	 * @param utime the utime to set
+	 * @param the updated time to set.
 	 */
 	public void setUtime(Date utime) {
 		this.utime = utime;
 	}
 	/**
-	 * @return the uuid
+	 * @return the updated user's id.
 	 */
 	public Integer getUuid() {
 		return uuid;
 	}
 	/**
-	 * @param uuid the uuid to set
+	 * @param the updated user's id to set
 	 */
 	public void setUuid(Integer uuid) {
 		this.uuid = uuid;
 	}
 	/**
-	 * @return the uip
+	 * @return the updated ip.
 	 */
 	public String getUip() {
 		return uip;
 	}
 	/**
-	 * @param uip the uip to set
+	 * @param the updated ip to set.
 	 */
 	public void setUip(String uip) {
 		this.uip = uip;
