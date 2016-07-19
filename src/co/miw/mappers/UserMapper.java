@@ -1,5 +1,6 @@
 /**
  * Because using MyBatis3+ and Spring, choose the Injecting Mapper method to replace traditional DAO method.
+ * Since this is equivalent to DAO, the naming method of methods use insert, select, update and delete which is SQL language.
  */
 package co.miw.mappers;
 
@@ -13,11 +14,11 @@ import co.miw.models.User;
  */
 public interface UserMapper {
 	//Insert a user.
-   void insertUser(User user);
+   void insertUser(User user) throws Exception;
    //Insert selected users according to selected on the display/a list.
 //   void insertSelectedUser(List<User> list);
-//   //Query a user by user id.
-//   User selectByKey(Integer id);
+   //Query a user by user id.
+   User selectByKey(Integer id);
 //   //Query all users.
 //   List<User> selectList();
 //   //Updated user's information according to user id.

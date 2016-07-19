@@ -45,7 +45,9 @@
 			<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 						<property name="dataSource" ref="dataSource" />
 						<property name="configLocation" value="/WEB-INF/conf/sqlMapConfig.xml" />
+						<!-- 
 						<property name="mapperLocations" value="/WEB-INF/conf/mapper/postgreSQL/**/*Mapper.xml" />
+						 -->
 			</bean>
 			<!-- Configure SQLSession template -->
 			<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

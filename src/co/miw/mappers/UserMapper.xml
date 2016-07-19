@@ -3,7 +3,16 @@
 <mapper namespace="co.miw.mappers.UserMapper">
 			<!-- Add a user. -->
 			<insert id="insertUser" parameterType="co.miw.models.User">
-						insert into t_user(uname,password, realname, gender, points, active, email,	mobile,tel,office,home,remark,ctime,cuid,cip,utime,uuid,uip)
-						values ( #{uname}, #{password},#{realname},#{gender},#{points},#{active},#{email},#{mobile},#{tel},#{office},#{home},#{remark},#{ctime},#{cuid},#{cip},#{utime},#{uuid},#{uip})
+						insert into t_user
+							(uname,password, realname, gender, points, active, email,	mobile,tel,office,home,remark,ctime,cuid,cip,utime,uuid,uip)
+						values 
+							(#{uname}, #{password},#{realname},#{gender},#{points},#{active},#{email},#{mobile},#{tel},#{office},#{home},#{remark},#{ctime},#{cuid},#{cip},#{utime},#{uuid},#{uip})
 			</insert>
+			<!-- Query a user by ID -->
+			<select id="selectByKey" parameterType="int" resultType="co.miw.models.User">
+				select 
+					uid,uname,password,realname,gender,points,active
+				from t_user
+				where uid=#{uid}
+			</select>
 </mapper>
