@@ -32,7 +32,6 @@ public class LoginController {
       ModelAndView view=null;
       //To transfer the user info, divide the getting user info and verification into 2 steps
       User user=userServiceImpl.queryById(uid);
-      System.out.println("USER-----"+user);
       //Input uid is not existing, then return the login page with ERROR message.
       if (user==null){
          view=new ModelAndView(new RedirectView("login.jsp"));
@@ -41,6 +40,7 @@ public class LoginController {
       }
       if (userServiceImpl.verifyUserPwd(user, uid, password)){
          session.setAttribute("user", user);
+         System.out.println("USER-----"+user.getActive()+user.getUid()+user.getUname());
          view=new ModelAndView("success");
          return view;
       }

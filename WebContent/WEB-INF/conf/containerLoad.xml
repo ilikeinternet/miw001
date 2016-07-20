@@ -20,6 +20,7 @@
 						<property name="maxIdle" value="${jdbc.maxIdle}"></property>                       <!--The maximal idle/waiting number of the DB Connection pool -->
 						<property name="maxWaitMillis" value="${jdbc.maxWaitMillis}"></property>    <!--The maximal waiting time (ms) of the DB Connection pool -->
 						<property name="maxTotal" value="${jdbc.maxTotal}"></property>                    <!--The maximal active number of the DB Connection pool -->
+						<property name="defaultAutoCommit" value="${jdbc.defaultAutoCommit}"></property>
 			</bean>
 			<!-- Configure JDBC transaction -->
 			<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

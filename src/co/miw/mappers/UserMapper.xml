@@ -12,7 +12,7 @@
 			<select id="selectByKey" parameterType="int" resultType="co.miw.models.User">
 				select 
 					uid,uname,password,realname,gender,points,active
-				from t_user
+				from miw1.t_user
 				where uid=#{uid}
 			</select>
 </mapper>
