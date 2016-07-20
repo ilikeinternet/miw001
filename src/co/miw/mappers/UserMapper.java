@@ -18,7 +18,7 @@ public interface UserMapper {
    //Insert selected users according to selected on the display/a list.
 //   void insertSelectedUser(List<User> list);
    //Query a user by user id.
-   User selectByKey(Integer id);
+   User selectByKey(Integer uid);
 //   //Query all users.
 //   List<User> selectList();
 //   //Updated user's information according to user id.

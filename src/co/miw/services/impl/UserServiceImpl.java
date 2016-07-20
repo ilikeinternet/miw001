@@ -4,7 +4,10 @@
 package co.miw.services.impl;
 
 import java.util.List;
+import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import co.miw.mappers.UserMapper;
 import co.miw.models.User;
 import co.miw.services.UserService;
 
@@ -14,6 +17,8 @@ import co.miw.services.UserService;
  */
 @Service("userServiceImpl")
 public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements UserService {
+   @Autowired
+   private UserMapper userMapper;
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#create(java.lang.Object)
     */
@@ -26,12 +31,11 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#queryById(java.io.Serializable)
     */
-//   @Override
-//   public User queryById(Integer uid) {
-//      User user;
-//      //user=userDaoImpl.queryById(uid);
-//      return user;
-//   }
+   @Override
+   public User queryById(Integer uid) {
+      User user=userMapper.selectByKey(uid);
+      return user;
+   }
 
    /* (non-Javadoc)
     * @see co.miw.services.BaseService#queryList()
@@ -82,8 +86,8 @@ public class UserServiceImpl extends BaseServiceImpl<User, Integer> implements U
     * @see co.miw.services.UserService#verifyUserPwd(co.miw.models.User, java.lang.String, java.lang.String)
     */
    @Override
-   public boolean verifyUserPwd(User user, Integer uid, String password) {
-      if(!user.getPassword().equals(password)){
+   public boolean verifyUserPwd(User user, Integer uid, String password) { 
+      if (!user.getPassword().equals(password)){
          return false;
       }
       return true;
