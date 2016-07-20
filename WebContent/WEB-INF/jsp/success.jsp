@@ -9,10 +9,12 @@
 <body>
   <h1>SUCCESS</h1>
   <table width="700" align="center" border="1">
+  	<tr>
+      <th>USER ID</th><th>USER NAME</th><th>REALNAME</th><th>GENDER</th><th>POINTS</th><th>ACTIVE</th>
     <tr>
       <td>${user.uid }</td>
-      <td><a href="${user.id }">${user.uname }</a></td>
-      <td>${user.realname }</td><td>${user.password }</td><td>${user.email }</td>
+      <td><a href="${user.uid }">${user.uname }</a></td>
+      <td>${user.realname }</td><td>${user.gender }</td><td>${user.points }</td><td>${user.active }</td>
     </tr>
   </table>
 </body>

@@ -14,5 +14,8 @@
 	<mvc:annotation-driven/>
 	<context:component-scan base-package="co.miw.web.controllers" />
   <context:component-scan base-package="co.miw.services" />
-  <context:component-scan base-package="co.miw.daos" />
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
 </beans>
