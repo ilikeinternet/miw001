@@ -3,7 +3,7 @@
 <mapper namespace="co.miw.mappers.UserMapper">
 			<!-- Add a user. -->
 			<insert id="insertUser" parameterType="co.miw.models.User">
-						insert into t_user
+						insert into miw1.t_user
 							(uname,password, realname, gender, points, active, email,	mobile,tel,office,home,remark,ctime,cuid,cip,utime,uuid,uip)
 						values 
 							(#{uname}, #{password},#{realname},#{gender},#{points},#{active},#{email},#{mobile},#{tel},#{office},#{home},#{remark},#{ctime},#{cuid},#{cip},#{utime},#{uuid},#{uip})
