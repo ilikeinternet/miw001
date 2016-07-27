@@ -4,17 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SUCCESS</title>
+<title>MAIN</title>
 </head>
 <body>
-  <h1>SUCCESS</h1>
+  <h1>MAIN</h1>
   <table width="700" align="center" border="1">
   	<tr>
-      <th>USER ID</th><th>USER NAME</th><th>REALNAME</th><th>GENDER</th><th>POINTS</th><th>ACTIVE</th>
+      <th>USER ID</th><th>USER NAME</th><th>REALNAME</th><th>GENDER</th><th>POINTS</th><th>ACTIVE</th><th>REMARK</th>
     <tr>
       <td>${user.uid }</td>
-      <td><a href="${user.uid }">${user.uname }</a></td>
-      <td>${user.realname }</td><td>${user.gender }</td><td>${user.points }</td><td>${user.active }</td>
+      <td><a href="${user.uid }">${user.uname }</a></td><td>${user.realname }</td><td>${user.gender }</td><td>${user.points }</td><td>${user.active }</td><td>${user.remark }</td>
     </tr>
   </table>
 </body>
