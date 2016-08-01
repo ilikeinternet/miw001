@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class CommonController {
    @RequestMapping("/add")
    public void add(String n, String p) {
       System.out.println("add---");
