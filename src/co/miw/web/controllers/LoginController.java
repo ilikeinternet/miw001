@@ -40,7 +40,7 @@ public class LoginController {
       }
       if (userServiceImpl.verifyUserPwd(user, uid, password)){
          session.setAttribute("user", user);
-          view=new ModelAndView("success");
+          view=new ModelAndView("main");
          return view;
       }
       view=new ModelAndView("error");

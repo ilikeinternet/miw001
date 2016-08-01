@@ -16,5 +16,6 @@
       <td><a href="${user.uid }">${user.uname }</a></td><td>${user.realname }</td><td>${user.gender }</td><td>${user.points }</td><td>${user.active }</td><td>${user.remark }</td>
     </tr>
   </table>
+  <h2><a href="/futures"></a></h2>
 </body>
 </html>
