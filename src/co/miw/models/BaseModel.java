@@ -3,7 +3,7 @@
  */
 package co.miw.models;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * @author JTLi 16/07/09
@@ -11,10 +11,10 @@ import java.util.Date;
  */
 public class BaseModel {
 	private String remark;
-   private Date ctime;
+   private Timestamp ctime;
    private Integer cuid;
    private String cip;
-   private Date utime;
+   private Timestamp utime;
    private Integer uuid;
    private String uip;
 	/**
@@ -32,13 +32,13 @@ public class BaseModel {
 	/**
 	 * @return the created time of this record.
 	 */
-	public Date getCtime() {
+	public Timestamp getCtime() {
 		return ctime;
 	}
 	/**
 	 * @param the created time to set.
 	 */
-	public void setCtime(Date ctime) {
+	public void setCtime(Timestamp ctime) {
 		this.ctime = ctime;
 	}
 	/**
@@ -68,13 +68,13 @@ public class BaseModel {
 	/**
 	 * @return the updated time.
 	 */
-	public Date getUtime() {
+	public Timestamp getUtime() {
 		return utime;
 	}
 	/**
 	 * @param the updated time to set.
 	 */
-	public void setUtime(Date utime) {
+	public void setUtime(Timestamp utime) {
 		this.utime = utime;
 	}
 	/**
