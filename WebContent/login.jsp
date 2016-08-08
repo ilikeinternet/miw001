@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/main.css"/>
 </head>
 <body>
-	<h1>${errorMsg}     AAAAA</h1>
+	<h1>${errorMsg}     LOGIN</h1>
 	<div class="wrapper">
 		<form action="login" method="post">
 		<div class="loginBox">

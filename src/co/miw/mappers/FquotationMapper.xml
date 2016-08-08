@@ -3,10 +3,10 @@
 <mapper namespace="co.miw.mappers.FquotationMapper">
       <!-- Add a quotation information. -->
       <insert id="insertFquotation" parameterType="co.miw.models.Fquotation">
-            insert into miw1.fquotation
+            insert into miw1.t_fquotation
               (marketdate, fcode, fyymm, open, max, min, close, spread, volume, interest, remark, ctime, cuid, cip)
             values 
-              (#{marketdate}, #{fcode},#{fyymm},#{open},#{max},#{min},#{close},#{spread},#{volume},#{interest},#{remark},#{ctime},#{cuid},#{cip},)
+              (#{marketdate}, #{fcode},#{fyymm},#{open},#{max},#{min},#{close},#{spread},#{volume},#{interest},#{remark},#{ctime},#{cuid},#{cip})
       </insert>
       <!-- Query a quotation by contract and created marketdate. -->
       <select id="selectByKey" parameterType="int" resultType="co.miw.models.User">

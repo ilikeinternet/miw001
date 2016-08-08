@@ -11,7 +11,15 @@
 	<mvc:resources mapping="/images/**" location="/images/"/>
 	<mvc:resources mapping="/js/**" location="/js/"/>
 	<mvc:default-servlet-handler/>
-	<mvc:annotation-driven/>
+	  <!-- Data type conversion -->
+  <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+  <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <property name="converters">
+      <list>
+        <bean class="co.jt.utils.DateConverter"/>
+      </list>
+    </property>
+  </bean>
 	<context:component-scan base-package="co.miw.web.controllers" />
   <context:component-scan base-package="co.miw.services" />
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

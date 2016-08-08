@@ -5,6 +5,7 @@ package co.miw.models;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import org.springframework.format.annotation.NumberFormat;
 
 /**
  * @author JTLi
@@ -15,10 +16,15 @@ public class Fquotation {
    private Date marketdate;
    private String fcode;
    private String fyymm;
+   @NumberFormat(pattern="##,###.##")
    private double open;
+   @NumberFormat(pattern="##,###.##")
    private double max;
+   @NumberFormat(pattern="##,###.##")
    private double min;
+   @NumberFormat(pattern="##,###.##")
    private double close;
+   @NumberFormat(pattern="##,###.##")
    private double spread;
    private Integer volume;
    private Integer interest;
@@ -39,13 +45,13 @@ public class Fquotation {
       this.id = id;
    }
    /**
-    * @return the marketdate
+    * @return the market date
     */
    public Date getMarketdate() {
       return marketdate;
    }
    /**
-    * @param marketdate the marketdate to set
+    * @param marketdate the market date to set
     */
    public void setMarketdate(Date marketdate) {
       this.marketdate = marketdate;

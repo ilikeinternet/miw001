@@ -8,47 +8,37 @@
 </head>
 <body>
   <h1>新建期货交易信息</h1> ${user.uname}
-  <form action="create" method="post">
-    <table width="1800" align="center" border="1">
+  <form action="create" method="post" > 
+    <table width="1500" align="center" border="1">
     	<tr>
-        <td>交易日期</td>
-        <td><input type="date" name="marketdate" /></td>
+        <td>交易日期<input type="date" name="marketdate" /></td>
       </tr> 
       <tr>
-        <td>期货代码<input type="text" name="fcode" /></td>
-        <td>期货年月<input type="text" name="fyymm" /></td>
+        <td>期货代码<input type="text" name="fcode" />   期货年月<input type="text" name="fyymm" /></td>
       </tr>
       <tr>
-        <td>开盘价</td>
-        <td><input type="number" name="open" /></td>
+        <td>开盘价<input type="number" name="open" /></td>
       </tr>
       <tr>
-        <td>最高价</td>
-        <td><input type="number" name="max" /></td>
+        <td>最高价<input type="number" name="max" /></td>
       </tr>
       <tr>
-        <td>最低价</td>
-        <td><input type="number" name="min" /></td>
+        <td>最低价<input type="number" name="min" /></td>
       </tr>
       <tr>
-        <td>收盘价</td>
-        <td><input type="number" name="close" /></td>
+        <td>收盘价<input type="number" name="close" /></td>
       </tr>
       <tr>
-        <td>涨跌</td>
-        <td><input type="number" name="spread" /></td>
+        <td>涨跌<input type="number" name="spread" /></td>
       </tr>
       <tr>
-        <td>成交量</td>
-        <td><input type="number" name="volume" /></td>
+        <td>成交量<input type="number" name="volume" /></td>
       </tr>
       <tr>
-        <td>持仓量</td>
-        <td><input type="number" name="interest" /></td>
+        <td>持仓量<input type="number" name="interest" /></td>
       </tr>
       <tr>
-        <td>备注</td>
-        <td><input type="text" name="remark" /></td>
+        <td>备注<input type="text" name="remark" /></td>
       </tr>
       <tr>
         <td><input type="submit" name="提交" /></td>

@@ -5,6 +5,7 @@ package co.miw.services.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import co.miw.mappers.FquotationMapper;
 import co.miw.models.Fquotation;
 import co.miw.services.FquotationService;
@@ -13,6 +14,7 @@ import co.miw.services.FquotationService;
  * @author JTLi
  * Futures quotation implement. It stores all futures transactions.
  */
+@Service("fquotationServiceImpl")
 public class FquotationServiceImpl extends BaseServiceImpl<Fquotation, String> implements FquotationService {
    @Autowired
    private FquotationMapper fquotationMapper;
