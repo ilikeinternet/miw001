@@ -11,10 +11,10 @@
   <form action="create" method="post" > 
     <table width="1500" align="center" border="1">
     	<tr>
-        <td>交易日期<input type="date" name="marketdate" /></td>
+        <td>交易日期<input type="date" name="marketdate"  required="true"/></td>
       </tr> 
       <tr>
-        <td>期货代码<input type="text" name="fcode" />   期货年月<input type="text" name="fyymm" /></td>
+        <td>期货代码<input type="text" name="fcode"  required="true"/>   期货年月<input type="text" name="fyymm" /></td>
       </tr>
       <tr>
         <td>开盘价<input type="number" name="open" /></td>

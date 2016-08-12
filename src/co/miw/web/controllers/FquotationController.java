@@ -1,14 +1,13 @@
 package co.miw.web.controllers;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import org.springframework.format.datetime.DateFormatter;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import co.jt.utils.GetClientIP;
 import co.miw.models.Fquotation;
 import co.miw.services.FquotationService;
 
@@ -30,8 +29,12 @@ public class FquotationController {
    }
    //Submit the creation information.
    @RequestMapping(value="/create",method=RequestMethod.POST)
-   public ModelAndView create(HttpSession httpSession, Fquotation fquotation) {
+   public ModelAndView create(HttpServletRequest hsr,HttpSession httpSession, Fquotation fquotation) {
       ModelAndView mav=new ModelAndView();
+      GetClientIP clientip=new GetClientIP();
+      String cipaddr;
+      cipaddr=clientip.getClientIP(hsr);
+      fquotation.setCip(cipaddr);
       fquotationServiceImpl.create(fquotation);
       //User user=(User)httpSession.getAttribute("user");
       mav.setViewName("main");
