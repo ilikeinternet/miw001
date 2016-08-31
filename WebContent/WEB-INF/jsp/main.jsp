@@ -18,5 +18,6 @@
   </table>
   <h2><a href="#">Futures</a></h2>
   <h3><a href="${pageContext.request.contextPath }/futures/create">新建</a></h3>
+  <h3><a href="<%=request.getContextPath()%>/css/fquotationcreate.html">新建</a></h3>
 </body>
 </html>
